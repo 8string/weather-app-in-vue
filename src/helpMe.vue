@@ -26,7 +26,9 @@ the comment refrences the code ABOVE it-->
           <div class="weather">{{ weather.weather[0].main }}</div>
         </div>
         <!--'main', 'name', 'sys.country', 'main.temp', 'weather[0].main (clouds, clear...)' is data that is in
-        the JSON file that we fetched via the API -->
+        the JSON file that we fetched via the API 
+        * Math.round() was implemented because the JSON returns a decimal number
+        * weather.weather[0].main is an array so we need the [0] index-->
       </div>
     </main>
   </div>
