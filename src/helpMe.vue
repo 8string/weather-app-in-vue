@@ -2,7 +2,7 @@
 the comment refrences the code ABOVE it-->
 
 <template>
-  <div id="app" :class="typeof weather.main != 'undefined' && weather.main.temp > 18 ? 'warm' : ''">
+  <div id="app" :class="typeof weather.main != 'undefined' && weather.main.temp > 20 ? 'warm' : ''">
   <!--this div is basically an if function for displaying the desired up the background image-->
     <main>
       <div class="search-box">
