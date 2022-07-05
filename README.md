@@ -1,6 +1,8 @@
 # weather-app
 
-<h2> This is a test <h2>
+This is a simple weather-app made in vueJS, the same one you have surely stumbled on through your vueJS journey... 
+
+------------------------------------------------------
 
 ## Project setup
 ```
