@@ -1,5 +1,9 @@
+<!--Comments are there for me to keep track what is happening and why, 
+the comment refrences the code ABOVE it-->
+
 <template>
-  <div id="app" :class="typeof weather.main != 'undefined' && weather.main.temp > 15 ? 'warm' : ''">
+  <div id="app" :class="typeof weather.main != 'undefined' && weather.main.temp > 18 ? 'warm' : ''">
+  <!--this div is basically an if function for displaying the desired up the background image-->
     <main>
       <div class="search-box">
         <input 
@@ -10,7 +14,8 @@
           @keypress="fetchWeather"
         />
       </div>
-
+      <!--v-model is bound to 'query' -->
+      
       <div class="weather-wrap" v-if="typeof weather.main != 'undefined'">
         <div class="location-box">
           <div class="location">{{ weather.name }}, {{ weather.sys.country }}</div>
@@ -21,34 +26,52 @@
           <div class="temp">{{ Math.round(weather.main.temp) }}°c</div>
           <div class="weather">{{ weather.weather[0].main }}</div>
         </div>
+        <!--'main', 'name', 'sys.country', 'main.temp', 'weather[0].main (clouds, clear...)' is data that is in
+        the JSON file that we fetched via the API -->
       </div>
     </main>
   </div>
 </template>
 
+
 <script>
 export default {
-  name: 'app',
+  name: 'app', 
   data () {
+  //data that we need for our weather app
     return {
       api_key: 'a67b1143b6b3fe8e3d46bb92d377c7ef',
       url_base: 'https://api.openweathermap.org/data/2.5/',
+      //we need an url_base because that is where our API key is stored
       query: '',
       weather: {}
     }
   },
   methods: {
-    fetchWeather (e) {
-      if (e.key == "Enter") {
-        fetch(`${this.url_base}weather?q=${this.query}&units=metric&APPID=${this.api_key}`)
-          .then(res => {
+    fetchWeather (e) 
+      /* This is a basic fetch request (in a function) that uses our API to get information on 
+      the weather in the desired city */ 
+      {
+/*1.*/ if (e.key == "Enter") { 
+/*2.*/  fetch(`${this.url_base}weather?q=${this.query}&units=metric&APPID=${this.api_key}`) 
+/*3.*/    .then(res => {
             return res.json();
           }).then(this.setResults);
+      /* in short: 
+      1. => if the 'Enter' key has been hit (we define it in a function, not in the HTML)
+      
+      2. => from the url_base, using this query (for instance 'Zagreb'), fetch the provided API 
+
+      3. => after getting the info from the API feed it to the setResults function      
+      */    
       }
     },
+
     setResults (results) {
       this.weather = results;
+    //sets the current results 
     },
+    //a simple function for building some weather info
     dateBuilder () {
       let d = new Date();
       let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -64,6 +87,9 @@ export default {
   }
 }
 </script>
+<!-- ** this is the whole logic for the weather app ** -->
+
+
 
 <style>
 * {

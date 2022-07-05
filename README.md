@@ -4,6 +4,8 @@ This is a simple weather-app made in vueJS, the same one you have surely stumble
 
 > choo + choo = train 
 
+I've put in comments to better navigate through the code.
+
 ------------------------------------------------------
 
 ## Project setup
