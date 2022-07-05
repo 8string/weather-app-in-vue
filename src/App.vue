@@ -14,7 +14,7 @@ the comment refrences the code ABOVE it-->
           @keypress="fetchWeather"
         />
       </div>
-      <!--v-model is bound to 'query' -->
+      <!--v-model is bound to 'query' --> 
       
       <div class="weather-wrap" v-if="typeof weather.main != 'undefined'">
         <div class="location-box">
