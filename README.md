@@ -1,5 +1,7 @@
 # weather-app
 
+<h2> This is a test <h2>
+
 ## Project setup
 ```
 npm install
