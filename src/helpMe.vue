@@ -40,7 +40,6 @@ export default {
   data () {
   //data that we need for our weather app
     return {
-      api_key: 'a67b1143b6b3fe8e3d46bb92d377c7ef',
       url_base: 'https://api.openweathermap.org/data/2.5/',
       //we need an url_base because that is where our API key is stored
       weather: {}
@@ -51,6 +50,7 @@ export default {
       /* This is a basic fetch request (in a function) that uses our API to get information on 
       the weather in the desired city */ 
       {
+       const api_key = process.env.VUE_APP_API_KEY 
 /*1.*/ if (e.key == "Enter") { 
 /*2.*/  fetch(`${this.url_base}weather?q=${this.query}&units=metric&APPID=${this.api_key}`) 
 /*3.*/    .then(res => {
