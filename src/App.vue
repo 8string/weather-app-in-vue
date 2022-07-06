@@ -27,7 +27,6 @@
   </div>
 </template>
 
-<!-- Hey Bruno I added this comment that you can delete later, cheers! -->
 <script>
 export default {
   name: 'app', 
