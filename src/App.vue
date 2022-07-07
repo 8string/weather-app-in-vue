@@ -91,11 +91,6 @@ export default {
       let year = d.getFullYear();
 
       return `${day} ${date} ${month} ${year}`;
-    },
-  },
-};
-/* FOUND YOU!
-POZDRAV IZ RIJEKE*/
 </script>
 
 <style>
